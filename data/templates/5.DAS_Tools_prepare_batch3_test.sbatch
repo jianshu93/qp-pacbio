@@ -30,7 +30,11 @@ DAS_db=/ddn_scratch/qiita/databases/qp-pacbio/DAS_Tool/db/
 cd {{output}}/step-4/${sample_name}_binning
 
 rm metabat2_bins/bin.unbinned.fa
+rm metabat2_bins/bin.lowDepth.fa
+rm metabat2_bins/bin.tooShort.fa
+rm metabat2_bins/bin.BinInfo.txt
 rm concoct_bins/unbinned.fa
+
 Fasta_to_Contig2Bin.sh -i ./concoct_bins -e fa > ${sample_name}.concoct.tsv
 Fasta_to_Contig2Bin.sh -i ./maxbin2_bins -e fa > ${sample_name}.maxbin2.tsv
 Fasta_to_Contig2Bin.sh -i ./metabat2_bins -e fa > ${sample_name}.metabat2.tsv
