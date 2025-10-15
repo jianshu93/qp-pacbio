@@ -37,7 +37,7 @@ rm concoct_bins/unbinned.fa
 
 Fasta_to_Contig2Bin.sh -i ./concoct_bins -e fa > ${sample_name}.concoct.tsv
 Fasta_to_Contig2Bin.sh -i ./maxbin2_bins -e fa > ${sample_name}.maxbin2.tsv
-Fasta_to_Contig2Bin.sh -i ./metabat2_bins -e fa > ${sample_name}.metabat2.tsv
+Fasta_to_Contig2Bin.sh -i ./metabat2_bins -e fa | awk 'BEGIN{FS=OFS="\t"}{print $1"\t"$4}' > ${sample_name}.metabat2.tsv
 
 mkdir {{output}}/${folder}/${sample_name}
 
