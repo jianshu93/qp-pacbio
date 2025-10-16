@@ -26,8 +26,8 @@ cd {{output}}/step-5/${sample_name}_refinement/${sample_name}/${sample_name}_DAS
 
 for f in *.fa; do
     k=${f##*/}
-    a="${sample_name}_${k}"
-    mv "$k" "$a"
+    a=${sample_name}_${k}
+    mv $k $a
 done
 cp ./${sample_name}*.fa step-6/${sample_name}_MAG_rename
 
