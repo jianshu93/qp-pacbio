@@ -29,6 +29,6 @@ for f in *.fa; do
     a=${sample_name}_${k}
     mv $k $a
 done
-cp ./${sample_name}*.fa step-6/${sample_name}_MAG_rename
+cp ${sample_name}*.fa {{output}}/step-6/${sample_name}_MAG_rename
 
 #### where do we store the MAGS?
